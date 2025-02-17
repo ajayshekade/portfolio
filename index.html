@@ -10,15 +10,15 @@
 </head>
 <body>
     <!-- Header Design -->
-    <header class="header">
+ <header class="header">
         <a href="#" class="logo">Portfolio</a>
-        <i class="fa-solid fa-bars" id="menu-icon"></i>
-        <nav class="navbar">
-            <a href="#home" class="active">Home</a>
-            <a href="#about">About</a>
-            <a href="#services">Services</a>
-            <a href="#portfolio">Portfolio</a>
-            <a href="#contact">Contact</a>
+        <i class="fa-solid fa-bars" id="menu-icon" onclick="toggleMenu()"></i>
+        <nav class="navbar" id="nav-menu">
+            <a href="#home" class="active" onclick="closeMenu()">Home</a>
+            <a href="#about" onclick="closeMenu()" >About</a>
+            <a href="#services" onclick="closeMenu()" >Services</a>
+            <a href="#portfolio" onclick="closeMenu()" >Portfolio</a>
+            <a href="#contact" onclick="closeMenu()" >Contact</a>
         </nav>
     </header>
     
