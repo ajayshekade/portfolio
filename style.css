@@ -67,6 +67,7 @@ section{
     color:var(--text-color);
     margin-left: 4rem;
     font-weight: 700;
+    padding: 10px 15px;
 }
 
 /* Navbar link hover and active states */
@@ -80,6 +81,9 @@ section{
     font-size: 3.6rem;
     color:var(--text-color);
     display: none; /* Hidden in larger screens */
+}
+.navbar.show {
+    display: flex;
 }
 
 /* Home section - centered content */
