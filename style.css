@@ -1,0 +1,544 @@
+/* Importing external fonts (Monomakh and Nunito) */
+@import url('https://fonts.googleapis.com/css2?family=Monomakh&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+/* Universal styles for all elements */
+*{
+    margin: 0; /* Remove margin */
+    padding: 0; /* Remove padding */
+    box-sizing: border-box; /* Include padding and border in element's total width/height */
+    text-decoration: none; /* Remove text underline */
+    border: none; /* Remove borders */
+    outline: none; /* Remove outline on focused elements */
+    scroll-behavior: smooth; /* Smooth scrolling behavior */
+    font-family: "Nunito", sans-serif; /* Default font-family */
+}
+
+/* Root variables for color scheme */
+:root{
+    --bg-color:#191f36; /* Background color */
+    --snd-bg-color:#262B40; /* Secondary background color */
+    --text-color:#fff; /* Text color */
+    --main-color:#59B2F4; /* Main accent color */
+}
+
+/* HTML settings */
+html{
+    font-size: 62.5%; /* 1rem = 10px, easier calculation */
+    overflow-x:hidden ; /* Prevent horizontal scrolling */
+}
+
+/* Body styling */
+body{
+    background:var(--bg-color); /* Set background to root variable */
+    color:var(--text-color); /* Set text color to root variable */
+}
+
+/* Section styling, applying padding and ensuring section takes at least the full height of the viewport */
+section{
+    min-height: 100vh; /* Full height of viewport */
+    padding: 10rem 9% 2rem; /* Top, sides, and bottom padding */
+}
+
+/* Header (fixed on top of the page) */
+.header{
+    position: fixed; /* Fix the header to the top */
+    top: 0;
+    left: 0;
+    width: 100%; /* Full width */
+    padding: 2rem 9%; /* Padding inside header */
+    background:var(--bg-color); /* Background color */
+    display: flex; /* Flexbox for layout */
+    justify-content: space-between; /* Space between logo and navbar */
+    align-items: center; /* Vertically center items */
+    z-index:100; /* Ensure header stays on top of other content */
+}
+
+/* Logo styling */
+.logo{
+    font-size:2.5rem;
+    color: var(--text-color);
+    font-weight: 700;
+    cursor: default; /* Don't allow clicks on the logo */
+}
+
+/* Navbar link styles */
+.navbar a{
+    font-size: 1.5rem;
+    color:var(--text-color);
+    margin-left: 4rem;
+    font-weight: 700;
+}
+
+/* Navbar link hover and active states */
+.navbar a:hover,
+.navbar a.active{
+    color:var(--text-color);
+}
+
+/* Menu icon (hidden by default) */
+#menu-icon{
+    font-size: 3.6rem;
+    color:var(--text-color);
+    display: none; /* Hidden in larger screens */
+}
+
+/* Home section - centered content */
+.home{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Styling home-content text */
+.home-content h3{
+    font-size:3.2rem;
+    font-weight: 700;
+}
+
+/* Second home heading style */
+.home-content h3:nth-of-type(2){
+    margin-bottom: 2rem;
+}
+
+/* Span within home-content for special styling */
+span{
+    color:var(--main-color); /* Main accent color */
+}
+
+/* Main title in home section */
+.home-content h1{
+    font-size: 5.6rem;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+/* Floating image animation */
+.home-img img{
+  width: 25vw;
+  animation: floatImage 4s ease-in-out infinite; /* Infinite floating effect */
+}
+
+/* Keyframes for image floating effect */
+@keyframes floatImage{
+    0%{
+        transform: translateY(0); /* Start at normal position */
+    }
+    50%{
+        transform: translateY(-2.4rem); /* Move up */
+    }
+    100%{
+        transform: translateY(0); /* Return to normal position */
+    }
+}
+
+/* Home content text styling */
+.home-content p{
+    font-size: 1.6rem;
+}
+
+/* Social media icons container */
+.social-media a{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 4rem;
+    height: 4rem;
+    background: transparent;
+    border: .2rem solid var(--main-color);
+    border-radius: 50%;
+    font-size: 2rem;
+    color: var(--main-color);
+    margin: 3rem 1.5rem 3rem 0;
+    transition: .5s ease;
+}
+
+/* Social media icons hover effect */
+.social-media a:hover{
+    background: var(--main-color);
+    color: var(--snd-bg-color); /* Change color on hover */
+    box-shadow: 0 0 1rem var(--main-color); /* Add shadow */
+}
+
+/* Button style */
+.btn{
+    display: inline-block;
+    padding:1rem 2.8rem;
+    background: var(--main-color);
+    border-radius: 4rem;
+    box-shadow: 0 0 1rem var(--main-color);
+    font-size: 1.6rem;
+    color: var(--bg-color);
+    letter-spacing: .1rem;
+    font-weight: 600;
+    transition: .5s ease;
+}
+
+/* Button hover effect */
+.btn:hover{
+    box-shadow: none;
+}
+
+/* About section - center aligned with image */
+.about{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    background: var(--snd-bg-color);
+}
+
+/* About section image size */
+.about-img img{
+    width: 35vw;
+}
+
+/* Heading style for About section */
+.heading{
+    text-align: center;
+    font-size: 4.5rem;
+}
+
+/* About content styling */
+.about-content h2{
+    text-align: left;
+    line-height: 1.2;
+}
+
+/* About section subheading */
+.about-content h3{
+    font-size: 2.6rem;
+}
+
+/* About section paragraph styling */
+.about-content p{
+    font-size: 1.6rem;
+    margin: 2rem 0 3rem;
+}
+
+/* Services section heading */
+.services h2{
+    margin-bottom: 5rem;
+}
+
+/* Container for service boxes */
+.services-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+/* Service box styling */
+.services-container .services-box{
+   flex: 1 1 30rem;
+   background: var(--snd-bg-color);
+   padding: 3rem 2rem 4rem;
+   border-radius: 2rem;
+   text-align: center;
+   border:.2rem solid var(--bg-color);
+   transition: .5s ease;
+}
+
+/* Hover effect for service box */
+.services-container .services-box:hover{
+    border-color: var(--main-color);
+    transform: scale(1.02);
+}
+
+/* Icon inside service box */
+.services-box i{
+    font-size: 7rem;
+    color: var(--main-color);
+}
+
+/* Service box title */
+.services-box h3{
+    font-size: 2.6rem;
+}
+
+/* Service box paragraph */
+.services-box p{
+    font-size:1.6rem;
+    margin: 1rem 0 3rem;
+}
+
+/* Portfolio section */
+.portfolio{
+    background: var(--snd-bg-color);
+}
+
+/* Portfolio section heading */
+.portfolio h2{
+    margin-bottom: 4rem;
+}
+
+/* Portfolio container with grid layout */
+.portfolio-container{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    align-items: center;
+    gap: 2.5rem;
+}
+
+/* Individual portfolio box styling */
+.portfolio-container .portfolio-box{
+    position: relative;
+    border-radius: 2rem;
+    box-shadow: 0 0 1rem var(--bg-color);
+    overflow:hidden;
+    display: flex;
+}
+
+/* Image within portfolio box */
+.portfolio-box img{
+    width: 100%;
+    transition: .5s ease;
+    opacity: 0.7;
+}
+
+/* Portfolio box hover effect */
+.portfolio-box:hover img{
+    transform: scale(1.1);
+}
+
+/* Portfolio box overlay layer */
+.portfolio-box .portfolio-layer{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.1),var(--main-color));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 0 4rem;
+    transform: translateY(100%);
+    transition: .5s ease;
+}
+
+/* Show overlay when hovering over portfolio box */
+.portfolio-box:hover .portfolio-layer{
+    transform: translateY(0);
+}
+
+/* Portfolio layer heading */
+.portfolio-layer h4{
+font-size: 3rem;
+}
+
+/* Portfolio layer description */
+.portfolio-layer p{
+    font-size: 1.6rem;
+    margin: .3rem 0 1rem;
+}
+
+/* Link button inside portfolio layer */
+.portfolio-layer a{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 5rem;
+    height: 5rem;
+    background: var(--text-color);
+    border-radius: 50%;
+}
+
+/* Icon inside portfolio link */
+.portfolio-layer a i{
+    font-size: 2rem;
+    color: var(--snd-bg-color);
+}
+
+/* Contact section heading */
+.contact h2{
+    margin-bottom: 3rem;
+}
+
+/* Contact form styling */
+.contact form{
+    max-width: 70rem;
+    margin: 1rem auto;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+/* Styling input and textarea inside form */
+.contact form .input-box{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap:wrap ;
+}
+
+/* Input and textarea fields */
+.contact form .input-box input,
+.contact form textarea{
+    width: 100%;
+    padding: 1.5rem;
+    font-size: 1.6rem;
+    color: var(--text-color);
+    background: var(--snd-bg-color);
+    border-radius: .8rem;
+    margin: .7rem 0;
+}
+
+/* Form input fields styling */
+.contact form .input-box input{
+    width: 49%;
+}
+
+/* Disable resizing of textarea */
+.contact form textarea{
+    resize: none;
+}
+
+/* Button inside contact form */
+.contact form .btn{
+    margin-top: 2rem;
+    cursor: pointer;
+}
+
+/* Footer styling */
+.footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap:wrap ;
+    padding: 2rem 9%;
+    background: var(--snd-bg-color);
+}
+
+/* Footer text */
+.footer-text{
+    font-size: 1.6rem;
+}
+
+/* Footer icon and top button */
+.footer-iconTop{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: .8rem 1rem;
+    background:var(--main-color);
+    border-radius: .8rem;
+    transition: .5s ease;
+}
+
+/* Hover effect for footer icon */
+.footer-iconTop a:hover{
+    box-shadow: 0 0 1rem var(--main-color);
+}
+
+/* Footer icon inside the button */
+.footer-iconTop a i{
+    font-size: 2.4rem;
+    color: var(--snd-bg-color);
+}
+
+/* Media Queries for responsive design */
+@media (max-width: 1200px){
+    html{
+        font-size: 55%; /* Reduce font size for medium screens */
+    }
+}
+
+@media (max-width: 991px){
+    .header{
+        padding: 2rem 3%; /* Adjust header padding */
+    }
+    section{
+        padding: 10rem 3%; /* Adjust section padding */
+    }
+    .services{
+        padding: 7rem; /* Adjust services section padding */
+    }
+    .portfolio{
+        padding-bottom: 7rem ; /* Adjust portfolio section padding */
+    }
+    .contact{
+        min-height: auto; /* Adjust contact section height */
+    }
+    .footer{
+        padding: 2rem 3%; /* Adjust footer padding */
+    }
+}
+
+@media (max-width:  768px){
+    #menu-icon{
+        display: block; /* Show menu icon for smaller screens */
+    }
+    .navbar{
+        position: absolute; /* Position navbar below header */
+        top: 100%;
+        left: 0;
+        width: 100%;
+        padding: 1rem 3%;
+        background: var(--bg-color);
+        border-top: .1rem solid rgba(0, 0, 0, .2);
+        box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .2);
+        display: none;
+    }
+    .navbar .active{
+        display: block; /* Show navbar links when active */
+    }
+    .navbar a{
+        display: block;
+        font-size: 2rem;
+        margin: 3rem 0;
+    }
+    .home{
+        flex-direction: column; /* Stack home content vertically */
+    }
+    .home-content h3{
+        font-size: 2.6rem; /* Adjust font size */
+    }
+    .home-content h1{
+        font-size: 5rem; /* Adjust font size */
+    }
+    .home-content{
+       order: 2; /* Move home content below image */
+    }
+    .home-img img{
+        width: 90vw; /* Adjust image size */
+        margin-top:4rem ;
+    }
+    .about-img img{
+        width: 90vw; /* Adjust image size */
+        margin-top:4rem ;
+    }
+    .services h2{
+        margin-bottom:3rem ; /* Adjust margin */
+    }
+    .portfolio h2{
+        margin-bottom: 3rem; /* Adjust margin */
+    }
+    .portfolio-container{
+        grid-template-columns: repeat(2,1fr); /* Reduce columns to 2 */
+    }
+}
+
+@media (max-width:617px){
+    .portfolio-container{
+        grid-template-columns: 1fr; /* Single column for very small screens */
+    }
+    .home-img img{
+        width:80vw;
+        margin-top:8rem ;
+    }
+    .about-img img{
+        width:100vw;
+        margin-top: 4rem;
+    }
+}
+
+@media (max-width:450px){
+    html{
+        font-size: 50%; /* Smaller font for small screens */
+    }
+    .contact form .input-box input{
+        width: 100%; /* Make input fields full width */
+    }
+}
