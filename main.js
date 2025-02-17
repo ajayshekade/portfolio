@@ -50,3 +50,28 @@ const typed = new Typed('.multiple-text', {
     backDelay: 1000,
     loop: true,
 });
+function toggleMenu() {
+    let navMenu = document.getElementById("nav-menu");
+    navMenu.classList.toggle("show");
+    const menuIcon = document.getElementById('menu-icon');
+}
+
+// Function to close the menu when a link is clicked
+function closeMenu() {
+    let navMenu = document.getElementById("nav-menu");
+    navMenu.classList.remove("show");
+}
+
+// Attach event listeners after the DOM has loaded
+document.addEventListener("DOMContentLoaded", function () {
+    // Menu icon event listener
+    document.getElementById("menu-icon").addEventListener("click", toggleMenu);
+
+    // Get all navbar links
+    let navLinks = document.querySelectorAll(".navbar a");
+
+    // Add event listener to each link to close the menu
+    navLinks.forEach(function (link) {
+        link.addEventListener("click", closeMenu);
+    });
+});
