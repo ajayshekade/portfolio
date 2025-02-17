@@ -468,7 +468,7 @@ font-size: 3rem;
 
 @media (max-width:  768px){
     #menu-icon{
-        display: block; /* Show menu icon for smaller screens */
+        display: flex; /* Show menu icon for smaller screens */
     }
     .navbar{
         position: absolute; /* Position navbar below header */
