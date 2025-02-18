@@ -445,7 +445,7 @@ font-size: 3rem;
 }
 
 /* Media Queries for responsive design */
-@media (max-width: 1200px){
+@media (max-width: 1440px){
     html{
         font-size: 55%; /* Reduce font size for medium screens */
     }
