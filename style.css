@@ -21,6 +21,7 @@
     --main-color:#59B2F4; /* Main accent color */
 }
 
+
 /* HTML settings */
 html{
     font-size: 62.5%; /* 1rem = 10px, easier calculation */
@@ -186,7 +187,7 @@ span{
 
 /* About section - center aligned with image */
 .about{
-    display: flex;
+    display:flex ;
     justify-content: center;
     align-items: center;
     gap: 2rem;
@@ -445,7 +446,7 @@ font-size: 3rem;
 }
 
 /* Media Queries for responsive design */
-@media (max-width: 1440px){
+@media (max-width: 100%){
     html{
         font-size: 55%; /* Reduce font size for medium screens */
     }
@@ -457,6 +458,10 @@ font-size: 3rem;
     }
     section{
         padding: 10rem 3%; /* Adjust section padding */
+    }
+    .about{
+        display: block;
+
     }
     .services{
         padding: 7rem; /* Adjust services section padding */
